@@ -38,6 +38,15 @@
       .flag.flag--denmark{:title => 'Denmark'}
         .bar--white
         .bar--white
+  - # Greece
+  .flags__item
+    .flag__ratio.flag__ratio--3-2
+      .flag.flag--greece{:title => 'Greece'}
+        - 4.times do
+          .row--1-9
+        .canton--blue
+          .bar--white
+          .bar--white
   - # Kuwait
   .flags__item
     .flag__ratio.flag__ratio--2-1
@@ -69,7 +78,12 @@
       .flag.flag--timor-leste{:title => 'Timor Leste'}
         .triangle--yellow
         .triangle--black
-        .star
+        .star__outer
+          .star__inner
+            - 5.times do
+              .star__arm
+                .arm__half.arm__half--left
+                .arm__half.arm__half--right
   - # Tonga
   .flags__item
     .flag__ratio.flag__ratio--2-1
