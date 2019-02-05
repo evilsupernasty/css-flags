@@ -3,7 +3,9 @@
   /* pantone colour hex approximations */
   --p-black: #000000; /* black */
   --p-safe: #ffffff; /* white */
+  --p-red-032-c: #ef3340; /* red */
   --p-108-c: #fedb00; /* yellow */
+  --p-109-c: #ffd100; /* yellow */
   --p-115-c: #fdda24; /* yellow */
   --p-122-c: #fed141; /* yellow */
   --p-186-c: #c8102e; /* dark red */
@@ -14,6 +16,7 @@
   --p-294-c: #002f6c; /* blue */
   --p-314-c: #007fa3; /* teal */
   --p-348-c: #00843d; /* forest green */
+  --p-355-c: #009639; /* green */
   --p-356-c: #007a33; /* green */
   --p-483-c: #653024; /* brown */
   --p-485-c: #da291c; /* red */
@@ -29,6 +32,7 @@
   --a-8-5-b-r: -57.995deg;
   --a-3-2-b-l: 56.31deg;
   --a-3-2-b-r: -56.31deg;
+  --a-3-2-b: 33.69deg;
   --a-4-3-b-l: 53.13deg;
   --a-4-3-b-r: -53.13deg;
   /* ratio values */
@@ -389,6 +393,44 @@ body {
   }
 }
 
+/* Chile flag */
+.flag--chile {
+  background-image: linear-gradient(
+    to bottom,
+    var(--p-safe) 0%,
+    var(--p-safe) 50%,
+    var(--p-485-c) 50%,
+    var(--p-485-c) 100%
+  );
+  .canton--blue {
+    background-color: var(--p-286-c);
+    width: calc(100% / 3);
+    height: 50%;
+  }
+  .star__outer {
+    height: 50%;
+    width: 50%;
+    left: 25%;
+    top: 25%;
+  }
+  .arm__half::after {
+    background-color: var(--p-safe);
+  }
+}
+
+/* The Republic of the Congo flag */
+.flag--congo-republic {
+  background-image: linear-gradient(
+    135deg,
+    var(--p-355-c) 0%,
+    var(--p-355-c) calc(100% / 5 * 2),
+    var(--p-109-c) calc(100% / 5 * 2),
+    var(--p-109-c) calc(100% / 5 * 3),
+    var(--p-red-032-c) calc(100% / 5 * 3),
+    var(--p-red-032-c) calc(100%)
+  );
+}
+
 /* Denmark flag */
 .flag--denmark {
   background-color: var(--p-186-c);
@@ -437,6 +479,92 @@ body {
     top: calc(100% / 5 * 2);
     &:nth-child(1) {
       transform: rotate(90deg);
+    }
+  }
+}
+
+/* South Korea flag */
+.flag--korea-south {
+  background-color: var(--p-safe);
+  .taegeuk {
+    background-image: linear-gradient(
+      to bottom,
+      var(--p-186-c) 0%,
+      var(--p-186-c) 50%,
+      var(--p-294-c) 50%,
+      var(--p-294-c) 100%
+    );
+    border-radius: 50%;
+    top: 25%;
+    left: calc(100% / 3);
+    width: calc(100% / 3);
+    height: 50%;
+    transform: rotate(33.69deg);
+    &::before, &::after {
+      border-radius: 50%;
+      content: " ";
+      display: block;
+      top: 25%;
+      width: 50%;
+      height: 50%;
+    }
+    &::before {
+      background-color: var(--p-186-c);
+    }
+    &::after {
+      background-color: var(--p-294-c);
+      right: 0;
+    }
+  }
+  .trigram {
+    background-image: linear-gradient(
+      to right,
+      var(--p-black) 0%,
+      var(--p-black) calc(100% / 8 * 2),
+      var(--p-safe) calc(100% / 8 * 2),
+      var(--p-safe) calc(100% / 8 * 3),
+      var(--p-black) calc(100% / 8 * 3),
+      var(--p-black) calc(100% / 8 * 5),
+      var(--p-safe) calc(100% / 8 * 5),
+      var(--p-safe) calc(100% / 8 * 6),
+      var(--p-black) calc(100% / 8 * 6),
+      var(--p-black) 100%
+    );
+    top: calc(100% / 8 * 3);
+    left: calc(100% / 36 * 5);
+    width: calc(100% / 9);
+    height: 25%;
+    transform-origin: calc(100% + (100% * 9 / 4)) center;
+    &::before, &::after {
+      background-color: var(--p-safe);
+      content: " ";
+      top: calc(100% / 16 * 7);
+      height: calc(100% / 8);
+    }
+    &:nth-child(2) {
+      transform: rotate(var(--a-3-2-b));
+    }
+    &:nth-child(3) {
+      transform: rotate(calc(180deg - var(--a-3-2-b)));
+      &::before, &::after {
+        width: calc(100% / 4);
+      }
+      &::after {
+        right: 0;
+      }
+    }
+    &:nth-child(4) {
+      transform: rotate(calc(180deg + var(--a-3-2-b)));
+      &::before {
+        width: 100%;
+      }
+    }
+    &:nth-child(5) {
+      transform: rotate(calc(360deg - var(--a-3-2-b)));
+      &::before {
+        width: calc(100% / 4);
+        left: calc(100% / 8 * 3);
+      }
     }
   }
 }
