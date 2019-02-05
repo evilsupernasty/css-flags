@@ -449,6 +449,81 @@ body {
   }
 }
 
+/* Georgia flag */
+.flag--georgia {
+  background-color: var(--p-safe);
+  background-image:
+    linear-gradient(
+      to right,
+      transparent 0%,
+      transparent calc(100% / 3 * 1.3),
+      var(--p-485-c) calc(100% / 3 * 1.3),
+      var(--p-485-c) calc(100% / 3 * 1.7),
+      transparent calc(100% / 3 * 1.7),
+      transparent 100%
+    ),
+    linear-gradient(
+      to top,
+      transparent 0%,
+      transparent 40%,
+      var(--p-485-c) 40%,
+      var(--p-485-c) 60%,
+      transparent 60%,
+      transparent 100%
+    );
+  .bolnur-katskhuri {
+    background-color: var(--p-485-c);
+    width: calc(100% / 3 * 0.4);
+    height: 20%;
+    overflow: hidden;
+    &:nth-child(1) {
+      top: 10%;
+      left: calc(100% / 3 * 0.45);
+    }
+    &:nth-child(2) {
+      top: 10%;
+      right: calc(100% / 3 * 0.45);
+    }
+    &:nth-child(3) {
+      bottom: 10%;
+      left: calc(100% / 3 * 0.45);
+    }
+    &:nth-child(4) {
+      right: calc(100% / 3 * 0.45);
+      bottom: 10%;
+    }
+  }
+  .bolnur-katskhuri__cutout {
+    background-color: var(--p-safe);
+    width: 100%;
+    height: 100%;
+    &:nth-child(1) {
+      border-top-right-radius: 100%;
+      border-bottom-left-radius: 100%;
+      top: -65%;
+      left: -65%;
+    }
+    &:nth-child(2) {
+      border-top-left-radius: 100%;
+      border-bottom-right-radius: 100%;
+      top: -65%;
+      right: -65%;
+    }
+    &:nth-child(3) {
+      border-top-right-radius: 100%;
+      border-bottom-left-radius: 100%;
+      right: -65%;
+      bottom: -65%;
+    }
+    &:nth-child(4) {
+      border-top-left-radius: 100%;
+      border-bottom-right-radius: 100%;
+      bottom: -65%;
+      left: -65%;
+    }
+  }
+}
+
 /* Greece flag */
 .flag--greece {
   background-color: var(--p-286-c);
